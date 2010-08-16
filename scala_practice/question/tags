@@ -1,0 +1,25 @@
+BigInt	7.scala	16
+Re	4.scala~	1
+Unit	4.scala	24
+counter	1.scala	4
+counter	1.scala~	3
+counter	TAGS	3
+factTailRecursive	6.scala	/^def factTailRecursive(n:BigInt):BigInt = {$/
+factTailRecursive	6.scala	/^factTailRecursive(10000)$/
+fib	2.scala	/^def fib(n:BigInt):BigInt = {$/
+fib	2.scala~	/^def fib(n:Int):Int = {$/
+fib2	2.scala	/^def fib2(n:BigInt):BigInt = {$/
+input	1.scala	14
+input	TAGS	4
+nums	2.scala	15
+output	8.scala~	5
+pow	6.scala	/^pow(2,2) \/\/square$/
+print	3.scala	/^print("input text >>>")$/
+print	3.scala~	/^print("input text >>>")$/
+println	4.scala	/^println("Reyonlds = ULρ\/μ")$/
+println	4.scala~	/^println("Re = ULρ\/μ")$/
+scala	TAGS	2
+scala	TAGS	7
+text	8.scala	4
+waitTerminated	1.scala	19
+waitTerminated	TAGS	5

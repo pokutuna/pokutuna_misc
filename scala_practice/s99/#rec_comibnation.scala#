@@ -1,0 +1,54 @@
+
+//P26
+var nest = 0
+def printWithNest(n:Int,str:String):Unit ={
+//  if(n < 0) throw new Exception
+  print(" "*n)
+  println(str)
+}
+def flatMapSublists[A,B](ls:List[A])(f:(List[A]) => List[B]):List[B] = {
+  printWithNest(nest,"called flatMapSublists, ls: "+ls)
+  nest += 1
+  printWithNest(nest,"in match")
+  ls match {
+    case Nil =>
+      printWithNest(nest,"matched case Nil")
+      printWithNest(nest,"return Nil from flatMapSublists")
+      nest -= 1
+      Nil
+    case sublist@(_ :: tail) =>
+      printWithNest(nest,"matched case sublist")
+      printWithNest(nest,"call given function")
+      val fls = f(ls)
+      val fms = flatMapSublists(tail)(f)
+      printWithNest(nest,"f(ls): "+fls)
+      printWithNest(nest,"flatMapSublists(tail)(f): "+fms)
+      printWithNest(nest,"return "+(fls ::: fms)+" from flatMapSublists")
+      nest -=1
+      fls ::: fms
+  }
+}
+def combinations[A](n:Int, ls:List[A]):List[List[A]] = {
+  printWithNest(nest,"called combination, n: "+n+" ls: "+ls)
+  nest += 1
+  if(n==0){ 
+    printWithNest(nest,"cond n == 0")
+    printWithNest(nest,"return List(Nil) from combination")
+    nest -=1
+    List(Nil)}
+  else{
+    printWithNest(nest,"cond else (n != 0)")
+    flatMapSublists(ls){ l =>
+    val comb = combinations(n-1, l.tail)
+    printWithNest(nest,"comb: "+comb)
+    val mapped = comb.map{ i =>
+      printWithNest(nest,"l.head: ("+l.head +")  i: ("+i+")")
+      l.head :: i}
+    printWithNest(nest,"return mapped: "+mapped+" from combination")
+    nest -= 1                       
+    mapped                       
+    }
+     }
+}
+combinations(3, List('a, 'b, 'c, 'd, 'e, 'f))
+

@@ -1,0 +1,623 @@
+
+scala> called combination, n: 3 ls: List('a, 'b, 'c, 'd, 'e, 'f)
+ cond else (n != 0)
+ called flatMapSublists, ls: List('a, 'b, 'c, 'd, 'e, 'f)
+  in match
+  matched case sublist
+  call given function
+  called combination, n: 2 ls: List('b, 'c, 'd, 'e, 'f)
+   cond else (n != 0)
+   called flatMapSublists, ls: List('b, 'c, 'd, 'e, 'f)
+    in match
+    matched case sublist
+    call given function
+    called combination, n: 1 ls: List('c, 'd, 'e, 'f)
+     cond else (n != 0)
+     called flatMapSublists, ls: List('c, 'd, 'e, 'f)
+      in match
+      matched case sublist
+      call given function
+      called combination, n: 0 ls: List('d, 'e, 'f)
+       cond n == 0
+       return List(Nil) from combination
+      comb: List(List())
+      l.head: ('c)  i: (List())
+      return mapped: List(List('c)) from combination
+     called flatMapSublists, ls: List('d, 'e, 'f)
+      in match
+      matched case sublist
+      call given function
+      called combination, n: 0 ls: List('e, 'f)
+       cond n == 0
+       return List(Nil) from combination
+      comb: List(List())
+      l.head: ('d)  i: (List())
+      return mapped: List(List('d)) from combination
+     called flatMapSublists, ls: List('e, 'f)
+      in match
+      matched case sublist
+      call given function
+      called combination, n: 0 ls: List('f)
+       cond n == 0
+       return List(Nil) from combination
+      comb: List(List())
+      l.head: ('e)  i: (List())
+      return mapped: List(List('e)) from combination
+     called flatMapSublists, ls: List('f)
+      in match
+      matched case sublist
+      call given function
+      called combination, n: 0 ls: List()
+       cond n == 0
+       return List(Nil) from combination
+      comb: List(List())
+      l.head: ('f)  i: (List())
+      return mapped: List(List('f)) from combination
+     called flatMapSublists, ls: List()
+      in match
+      matched case Nil
+      return Nil from flatMapSublists
+     f(ls): List(List('f))
+     flatMapSublists(tail)(f): List()
+     return List(List('f)) from flatMapSublists
+    f(ls): List(List('e))
+    flatMapSublists(tail)(f): List(List('f))
+    return List(List('e), List('f)) from flatMapSublists
+   f(ls): List(List('d))
+   flatMapSublists(tail)(f): List(List('e), List('f))
+   return List(List('d), List('e), List('f)) from flatMapSublists
+  f(ls): List(List('c))
+  flatMapSublists(tail)(f): List(List('d), List('e), List('f))
+  return List(List('c), List('d), List('e), List('f)) from flatMapSublists
+ comb: List(List('c), List('d), List('e), List('f))
+ l.head: ('b)  i: (List('c))
+ l.head: ('b)  i: (List('d))
+ l.head: ('b)  i: (List('e))
+ l.head: ('b)  i: (List('f))
+ return mapped: List(List('b, 'c), List('b, 'd), List('b, 'e), List('b, 'f)) from combination
+called flatMapSublists, ls: List('c, 'd, 'e, 'f)
+ in match
+ matched case sublist
+ call given function
+ called combination, n: 1 ls: List('d, 'e, 'f)
+  cond else (n != 0)
+  called flatMapSublists, ls: List('d, 'e, 'f)
+   in match
+   matched case sublist
+   call given function
+   called combination, n: 0 ls: List('e, 'f)
+    cond n == 0
+    return List(Nil) from combination
+   comb: List(List())
+   l.head: ('d)  i: (List())
+   return mapped: List(List('d)) from combination
+  called flatMapSublists, ls: List('e, 'f)
+   in match
+   matched case sublist
+   call given function
+   called combination, n: 0 ls: List('f)
+    cond n == 0
+    return List(Nil) from combination
+   comb: List(List())
+   l.head: ('e)  i: (List())
+   return mapped: List(List('e)) from combination
+  called flatMapSublists, ls: List('f)
+   in match
+   matched case sublist
+   call given function
+   called combination, n: 0 ls: List()
+    cond n == 0
+    return List(Nil) from combination
+   comb: List(List())
+   l.head: ('f)  i: (List())
+   return mapped: List(List('f)) from combination
+  called flatMapSublists, ls: List()
+   in match
+   matched case Nil
+   return Nil from flatMapSublists
+  f(ls): List(List('f))
+  flatMapSublists(tail)(f): List()
+  return List(List('f)) from flatMapSublists
+ f(ls): List(List('e))
+ flatMapSublists(tail)(f): List(List('f))
+ return List(List('e), List('f)) from flatMapSublists
+f(ls): List(List('d))
+flatMapSublists(tail)(f): List(List('e), List('f))
+return List(List('d), List('e), List('f)) from flatMapSublists
+comb: List(List('d), List('e), List('f))
+l.head: ('c)  i: (List('d))
+l.head: ('c)  i: (List('e))
+l.head: ('c)  i: (List('f))
+return mapped: List(List('c, 'd), List('c, 'e), List('c, 'f)) from combination
+called flatMapSublists, ls: List('d, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('e, 'f)
+ in match
+ matched case sublist
+ call given function
+ called combination, n: 0 ls: List('f)
+  cond n == 0
+  return List(Nil) from combination
+ comb: List(List())
+ l.head: ('e)  i: (List())
+ return mapped: List(List('e)) from combination
+called flatMapSublists, ls: List('f)
+ in match
+ matched case sublist
+ call given function
+ called combination, n: 0 ls: List()
+  cond n == 0
+  return List(Nil) from combination
+ comb: List(List())
+ l.head: ('f)  i: (List())
+ return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+ in match
+ matched case Nil
+ return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+f(ls): List(List('e))
+flatMapSublists(tail)(f): List(List('f))
+return List(List('e), List('f)) from flatMapSublists
+comb: List(List('e), List('f))
+l.head: ('d)  i: (List('e))
+l.head: ('d)  i: (List('f))
+return mapped: List(List('d, 'e), List('d, 'f)) from combination
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('f)
+cond else (n != 0)
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+ cond n == 0
+ return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+comb: List(List('f))
+l.head: ('e)  i: (List('f))
+return mapped: List(List('e, 'f)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List()
+cond else (n != 0)
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+f(ls): List(List('e, 'f))
+flatMapSublists(tail)(f): List()
+return List(List('e, 'f)) from flatMapSublists
+f(ls): List(List('d, 'e), List('d, 'f))
+flatMapSublists(tail)(f): List(List('e, 'f))
+return List(List('d, 'e), List('d, 'f), List('e, 'f)) from flatMapSublists
+f(ls): List(List('c, 'd), List('c, 'e), List('c, 'f))
+flatMapSublists(tail)(f): List(List('d, 'e), List('d, 'f), List('e, 'f))
+return List(List('c, 'd), List('c, 'e), List('c, 'f), List('d, 'e), List('d, 'f), List('e, 'f)) from flatMapSublists
+f(ls): List(List('b, 'c), List('b, 'd), List('b, 'e), List('b, 'f))
+flatMapSublists(tail)(f): List(List('c, 'd), List('c, 'e), List('c, 'f), List('d, 'e), List('d, 'f), List('e, 'f))
+return List(List('b, 'c), List('b, 'd), List('b, 'e), List('b, 'f), List('c, 'd), List('c, 'e), List('c, 'f), List('d, 'e), List('d, 'f), List('e, 'f)) from flatMapSublists
+comb: List(List('b, 'c), List('b, 'd), List('b, 'e), List('b, 'f), List('c, 'd), List('c, 'e), List('c, 'f), List('d, 'e), List('d, 'f), List('e, 'f))
+l.head: ('a)  i: (List('b, 'c))
+l.head: ('a)  i: (List('b, 'd))
+l.head: ('a)  i: (List('b, 'e))
+l.head: ('a)  i: (List('b, 'f))
+l.head: ('a)  i: (List('c, 'd))
+l.head: ('a)  i: (List('c, 'e))
+l.head: ('a)  i: (List('c, 'f))
+l.head: ('a)  i: (List('d, 'e))
+l.head: ('a)  i: (List('d, 'f))
+l.head: ('a)  i: (List('e, 'f))
+return mapped: List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), List('a, 'b, 'f), List('a, 'c, 'd), List('a, 'c, 'e), List('a, 'c, 'f), List('a, 'd, 'e), List('a, 'd, 'f), List('a, 'e, 'f)) from combination
+called flatMapSublists, ls: List('b, 'c, 'd, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 2 ls: List('c, 'd, 'e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('c, 'd, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('d, 'e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('d, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List('e, 'f)
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('d)  i: (List())
+return mapped: List(List('d)) from combination
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List('f)
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('e)  i: (List())
+return mapped: List(List('e)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+f(ls): List(List('e))
+flatMapSublists(tail)(f): List(List('f))
+return List(List('e), List('f)) from flatMapSublists
+f(ls): List(List('d))
+flatMapSublists(tail)(f): List(List('e), List('f))
+return List(List('d), List('e), List('f)) from flatMapSublists
+comb: List(List('d), List('e), List('f))
+l.head: ('c)  i: (List('d))
+l.head: ('c)  i: (List('e))
+l.head: ('c)  i: (List('f))
+return mapped: List(List('c, 'd), List('c, 'e), List('c, 'f)) from combination
+called flatMapSublists, ls: List('d, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List('f)
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('e)  i: (List())
+return mapped: List(List('e)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+f(ls): List(List('e))
+flatMapSublists(tail)(f): List(List('f))
+return List(List('e), List('f)) from flatMapSublists
+comb: List(List('e), List('f))
+l.head: ('d)  i: (List('e))
+l.head: ('d)  i: (List('f))
+return mapped: List(List('d, 'e), List('d, 'f)) from combination
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('f)
+cond else (n != 0)
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+comb: List(List('f))
+l.head: ('e)  i: (List('f))
+return mapped: List(List('e, 'f)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List()
+cond else (n != 0)
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+f(ls): List(List('e, 'f))
+flatMapSublists(tail)(f): List()
+return List(List('e, 'f)) from flatMapSublists
+f(ls): List(List('d, 'e), List('d, 'f))
+flatMapSublists(tail)(f): List(List('e, 'f))
+return List(List('d, 'e), List('d, 'f), List('e, 'f)) from flatMapSublists
+f(ls): List(List('c, 'd), List('c, 'e), List('c, 'f))
+flatMapSublists(tail)(f): List(List('d, 'e), List('d, 'f), List('e, 'f))
+return List(List('c, 'd), List('c, 'e), List('c, 'f), List('d, 'e), List('d, 'f), List('e, 'f)) from flatMapSublists
+comb: List(List('c, 'd), List('c, 'e), List('c, 'f), List('d, 'e), List('d, 'f), List('e, 'f))
+l.head: ('b)  i: (List('c, 'd))
+l.head: ('b)  i: (List('c, 'e))
+l.head: ('b)  i: (List('c, 'f))
+l.head: ('b)  i: (List('d, 'e))
+l.head: ('b)  i: (List('d, 'f))
+l.head: ('b)  i: (List('e, 'f))
+return mapped: List(List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f), List('b, 'e, 'f)) from combination
+called flatMapSublists, ls: List('c, 'd, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 2 ls: List('d, 'e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('d, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List('f)
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('e)  i: (List())
+return mapped: List(List('e)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+f(ls): List(List('e))
+flatMapSublists(tail)(f): List(List('f))
+return List(List('e), List('f)) from flatMapSublists
+comb: List(List('e), List('f))
+l.head: ('d)  i: (List('e))
+l.head: ('d)  i: (List('f))
+return mapped: List(List('d, 'e), List('d, 'f)) from combination
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('f)
+cond else (n != 0)
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+comb: List(List('f))
+l.head: ('e)  i: (List('f))
+return mapped: List(List('e, 'f)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List()
+cond else (n != 0)
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+f(ls): List(List('e, 'f))
+flatMapSublists(tail)(f): List()
+return List(List('e, 'f)) from flatMapSublists
+f(ls): List(List('d, 'e), List('d, 'f))
+flatMapSublists(tail)(f): List(List('e, 'f))
+return List(List('d, 'e), List('d, 'f), List('e, 'f)) from flatMapSublists
+comb: List(List('d, 'e), List('d, 'f), List('e, 'f))
+l.head: ('c)  i: (List('d, 'e))
+l.head: ('c)  i: (List('d, 'f))
+l.head: ('c)  i: (List('e, 'f))
+return mapped: List(List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f)) from combination
+called flatMapSublists, ls: List('d, 'e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 2 ls: List('e, 'f)
+cond else (n != 0)
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List('f)
+cond else (n != 0)
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 0 ls: List()
+cond n == 0
+return List(Nil) from combination
+comb: List(List())
+l.head: ('f)  i: (List())
+return mapped: List(List('f)) from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List(List('f))
+flatMapSublists(tail)(f): List()
+return List(List('f)) from flatMapSublists
+comb: List(List('f))
+l.head: ('e)  i: (List('f))
+return mapped: List(List('e, 'f)) from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List()
+cond else (n != 0)
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+f(ls): List(List('e, 'f))
+flatMapSublists(tail)(f): List()
+return List(List('e, 'f)) from flatMapSublists
+comb: List(List('e, 'f))
+l.head: ('d)  i: (List('e, 'f))
+return mapped: List(List('d, 'e, 'f)) from combination
+called flatMapSublists, ls: List('e, 'f)
+in match
+matched case sublist
+call given function
+called combination, n: 2 ls: List('f)
+cond else (n != 0)
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 1 ls: List()
+cond else (n != 0)
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List('f)
+in match
+matched case sublist
+call given function
+called combination, n: 2 ls: List()
+cond else (n != 0)
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+comb: List()
+return mapped: List() from combination
+called flatMapSublists, ls: List()
+in match
+matched case Nil
+return Nil from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+f(ls): List()
+flatMapSublists(tail)(f): List()
+return List() from flatMapSublists
+f(ls): List(List('d, 'e, 'f))
+flatMapSublists(tail)(f): List()
+return List(List('d, 'e, 'f)) from flatMapSublists
+f(ls): List(List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f))
+flatMapSublists(tail)(f): List(List('d, 'e, 'f))
+return List(List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f), List('d, 'e, 'f)) from flatMapSublists
+f(ls): List(List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f), List('b, 'e, 'f))
+flatMapSublists(tail)(f): List(List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f), List('d, 'e, 'f))
+return List(List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f), List('b, 'e, 'f), List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f), List('d, 'e, 'f)) from flatMapSublists
+f(ls): List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), List('a, 'b, 'f), List('a, 'c, 'd), List('a, 'c, 'e), List('a, 'c, 'f), List('a, 'd, 'e), List('a, 'd, 'f), List('a, 'e, 'f))
+flatMapSublists(tail)(f): List(List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f), List('b, 'e, 'f), List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f), List('d, 'e, 'f))
+return List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), List('a, 'b, 'f), List('a, 'c, 'd), List('a, 'c, 'e), List('a, 'c, 'f), List('a, 'd, 'e), List('a, 'd, 'f), List('a, 'e, 'f), List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f), List('b, 'e, 'f), List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f), List('d, 'e, 'f)) from flatMapSublists
+res112: List[List[Symbol]] = List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), List('a, 'b, 'f), List('a, 'c, 'd), List('a, 'c, 'e), List('a, 'c, 'f), List('a, 'd, 'e), List('a, 'd, 'f), List('a, 'e, 'f), List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f), List('b, 'e, 'f), List('c, 'd, 'e), List('c, 'd, 'f), List('c, 'e, 'f), List('d, 'e, 'f))

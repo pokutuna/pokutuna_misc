@@ -1,0 +1,28 @@
+
+1.scala,64
+val counter 4,110
+val input 14,280
+def waitTerminated 19,332
+
+2.scala,45
+def fib(2,9
+def fib2(7,90
+var nums 15,234
+
+3.scala,11
+print(1,0
+
+4.scala,48
+println(1,0
+def repeatPrompt:Unit Unit24,652
+
+6.scala,68
+pow(10,123
+def factTailRecursive(33,576
+factTailRecursive(39,725
+
+7.scala,28
+var n:BigInt BigInt16,448
+
+8.scala,15
+val text 4,36
